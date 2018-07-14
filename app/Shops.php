@@ -12,6 +12,15 @@ class Shop extends Model
   ];
 
 
+  private $rules = array(
+    'title' => 'required',
+    'city' => 'required|min:6',
+    'address' => 'required|min:20'
+  );
+ 
+  public function validate($input) {
+    return Validator::make($input, $this->rules);
+  }
 
 
  public $timestamps = true;	
