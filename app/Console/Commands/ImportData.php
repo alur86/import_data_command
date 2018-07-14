@@ -44,7 +44,7 @@ class ImportData extends Command
             $file_path = "public/files/shops.csv" ;
 
 
-            $data = Excel::load($file_path, function($reader) {})->get();
+            $data = Excel::load($file_path, function($reader) {},'UTF-8')->get();
 
 
             if(!empty($data) && $data->count()){
